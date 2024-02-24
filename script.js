@@ -60,7 +60,6 @@ document.addEventListener("DOMContentLoaded", () => {
           let firstPlatform = platforms[0].visual;
           firstPlatform.classList.remove("platform");
           platforms.shift();
-          console.log(platforms);
           let newPlatform = new Platform(600);
           platforms.push(newPlatform);
         }
@@ -99,9 +98,9 @@ document.addEventListener("DOMContentLoaded", () => {
           doodlerLeftSpace <= platform.left + 85 &&
           !isJumping
         ) {
-          console.log("landed");
           startPoint = doodlerBottomSpace;
           score++;
+          scoreDiv.innerHTML = "your score: " + score;
           jump();
         }
       });
@@ -171,12 +170,25 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function start() {
+    score = 0;
     if (!isGameOver) {
       startButton.style.display = "none";
-      scoreDiv.style.display = "none";
+      scoreDiv.innerHTML = "your score: " + score;
       createPlatforms();
       createDoodler();
       setInterval(movePlatforms, 30);
+      jump();
+      document.addEventListener("keydown", control);
+    } else {
+      startButton.style.display = "none";
+      platforms = [];
+
+      clearInterval(upTimerId);
+      clearInterval(downTimerId);
+      clearInterval(leftTimerId);
+      clearInterval(rightTimerId);
+      createPlatforms();
+      createDoodler();
       jump();
       document.addEventListener("keydown", control);
     }
