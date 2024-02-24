@@ -3,6 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const grid = document.querySelector(".grid");
   const doodler = document.createElement("platform");
   const scoreDiv = document.querySelector(".score");
+  const leftControl = document.querySelector(".left-control");
+  const rightControl = document.querySelector(".right-control");
+
   let startPoint = 150;
   let doodlerLeftSpace = 50;
   let doodlerBottomSpace = startPoint;
@@ -179,6 +182,8 @@ document.addEventListener("DOMContentLoaded", () => {
       setInterval(movePlatforms, 30);
       jump();
       document.addEventListener("keydown", control);
+      leftControl.addEventListener("click", moveLeft);
+      rightControl.addEventListener("click", moveRight);
     } else {
       startButton.style.display = "none";
       platforms = [];
@@ -191,6 +196,8 @@ document.addEventListener("DOMContentLoaded", () => {
       createDoodler();
       jump();
       document.addEventListener("keydown", control);
+      leftControl.addEventListener("click", moveLeft);
+      rightControl.addEventListener("click", moveRight);
     }
   }
   startButton.addEventListener("click", start);

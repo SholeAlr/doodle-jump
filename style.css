@@ -45,7 +45,7 @@ body {
   position: absolute;
 }
 
-button {
+.start-btn {
   border-radius: 5px;
   height: 30px;
   width: 300px;
@@ -57,6 +57,25 @@ button {
   color: whitesmoke;
 }
 
+.control-wrapper {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  width: 100px;
+  justify-content: space-between;
+}
+
+.control {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  color: black;
+  width: 35px;
+  height: 35px;
+}
+
 .score {
   height: 60px;
   width: 300px;
@@ -64,4 +83,15 @@ button {
   font-size: 50px;
   background-color: whitesmoke;
   border: 1px solid black;
+}
+
+@media screen and (max-width: 850px) {
+  .control-wrapper {
+    visibility: visible;
+  }
+}
+@media screen and (min-width: 850px) {
+  .control-wrapper {
+    visibility: hidden;
+  }
 }
