@@ -1,44 +1,59 @@
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background: url("./images/sky.jpeg");
+}
+
+.main-display {
+  width: max-content;
+  height: max-content;
+}
 .grid {
-    width: 400px;
-    height: 600px;
-    position: relative;
-    font-size: 50px;
-    text-align: center;
-    background-image: url(./images/background.jfif);
+  width: 300px;
+  height: 600px;
+  position: relative;
+  font-size: 50px;
+  text-align: center;
+  border: 2px solid black;
 }
 
 .doodler {
-    width: 65px;
-    height: 85px;
-    background-image: url(./images/doodler.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: absolute;
+  width: 65px;
+  height: 85px;
+  background-image: url(./images/doodler.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
 }
 
 .platform {
-    width: 85px;
-    height: 15px;
-    background-color: green;
-    position: absolute;
+  width: 85px;
+  height: 15px;
+  background-color: green;
+  position: absolute;
 }
 
 button {
-    border-radius: 1rem;
-    height: 60px;
-    width: 400px;
-    border-style: none;
-    margin-bottom: 10px;
-    background-color: rgb(231, 46, 86);
-    font-size: large;
-    color: whitesmoke;
+  border-radius: 1rem;
+  height: 60px;
+  width: 300px;
+  border-style: none;
+  margin-bottom: 10px;
+  background-color: rgb(231, 46, 86);
+  font-size: large;
+  color: whitesmoke;
 }
 
 .score {
-    height: 60px;
-    width: 400px;
-    background-image: url(./images/score.jfif);
-    text-align: center;
-    font-size: 50px;
+  height: 60px;
+  width: 300px;
+  text-align: center;
+  font-size: 50px;
+  background-color: whitesmoke;
+  border: 1px solid black;
 }
